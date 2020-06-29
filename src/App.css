@@ -1,0 +1,124 @@
+/* body {
+  background-color: #f1f1f1;
+}
+
+.job {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px 15px 20px 15px;
+  align-items: center;
+  min-width: 330px;
+}
+.job:hover {
+  cursor: pointer;
+  color: #006660;
+}
+.job-company {
+  padding: 0 30px;
+}
+.job-dialog {
+  padding: 30px 50px;
+}
+.logo {
+  height: 30px;
+  float: right;
+  right: 0;
+  margin-top: 5px;
+  object-fit: contain;
+}
+.cardlogo {
+  height: 10px;
+  float: right;
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+.location-radio-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0;
+  padding: 20px 15px 20px 15px;
+  align-items: center;
+  min-width: 330px;
+}
+
+.location-radio-item {
+  padding: 0 10px;
+}
+
+.flex-align-mid {
+  display: flex;
+  align-items: center;
+}
+
+.job-title-location {
+  margin-left: 20px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-spacer {
+  width: 40px;
+}
+.org-logo {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.orglogo {
+  height: 30px;
+  float: right;
+  right: 0;
+  margin-top: 25px;
+  object-fit: contain;
+}
+.date {
+  float: right;
+  bottom: 0;
+}
+
+.stepper {
+  margin: 15px 0 20px 5px;
+  width: 80%;
+}
+
+@media only screen and (max-width: 900px) {
+  .sitting-guy {
+    display: none;
+  }
+} */
+
+
+.main-content{
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  
+  }
+
+  
+  /* Small screens */
+  @media only screen and (max-width: 600px) {
+   
+    .main-content {
+      margin-top: 10rem;
+      margin-left: 1rem;
+     
+      margin-left: 1rem;
+     
+    }
+  }
+  
