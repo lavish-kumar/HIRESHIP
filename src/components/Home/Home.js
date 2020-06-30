@@ -22,7 +22,7 @@ import fetch from "node-fetch";
 import data from "../../data.json"
 
 import Lottie from "../Lottie/Lottie"
-import logo from "../Lottie/data.json"
+import logo from "../Lottie/rocket.json"
 import search from "../Lottie/jobs.json"
 
 const job_url = "http://localhost:3001/jobs";

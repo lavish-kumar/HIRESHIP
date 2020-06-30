@@ -1,29 +1,21 @@
 import React from "react";
 
-
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import Slide from "@material-ui/core/Slide";
-import Chip from "@material-ui/core/Chip";
-import Avatar from "@material-ui/core/Avatar";
+// import Chip from "@material-ui/core/Chip";
+// import Avatar from "@material-ui/core/Avatar";
+import { DialogContentText } from "@material-ui/core";
+// import Typography from "@material-ui/core/Typography";
+// import LocationOnIcon from "@material-ui/icons/LocationOn";
+// import IconButton from "@material-ui/core/IconButton";
+// import AccessTime from "@material-ui/icons/AccessTime";
 
-import Typography from "@material-ui/core/Typography";
-import LocationOnIcon from "@material-ui/icons/LocationOn";
-import IconButton from "@material-ui/core/IconButton";
-import AccessTime from "@material-ui/icons/AccessTime";
-
-import { Div, Button, SideDrawer, Icon, Text,Row,Col } from "atomize";
-
+import { Div, Button, SideDrawer, Icon, Text, Row, Col, Tag } from "atomize";
 
 import Job from "./Job";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-
 
 const ONE_DAY_MS = 24 * 3600 * 1000;
 const logoMap = {
@@ -56,98 +48,233 @@ function makeDate(timestamp) {
   }
 }
 
-
-
-export default function JobCard({ job,open, handleClose }){
+export default function JobCard({ job, open, handleClose }) {
   if (!job.title) return <div />;
   return (
-    <SideDrawer style={{zIndex:4}} isOpen={open} onClose={handleClose} w={{ xs: "100vw", md: "40rem" }}>
-          <Row d="flex">
-            <Row>
-            <Div w="100%" >
-            <Button
-
-    h="2.5rem"
-    w="2.5rem"
-    bg="info700"
-    hoverBg="info600"
-    rounded="circle"
-    m={{ r: "1rem" }}
-    shadow="2"
-    hoverShadow="4"
-    onClick={handleClose}
-  >
-    <Icon name="Cross" size="20px" color="white" />
-  </Button>
-            </Div>
-
-            </Row>
-            <Row>
-          <Col>
-      <Div
-        m={{ xs: "3rem", md: "5rem" }}
-        p={{ b: "1rem" }}
-       pos="relative"
-      >
-        <Div
-          pos={{ xs: "absolute", lg: "absolute" }}
-          top={{ xs: "10rem", lg: "-1.5rem" }}
-          right={{ xs: "-1.5rem", lg: "-1.5rem" }}
-          w={{ xs: "5rem", lg: "9rem" }}
-          h={{ xs: "5rem", lg: "9rem" }}
-          bg="white"
-          shadow="5"
-          rounded="xl"
-          bgImg={job.company_logo}
-          bgSize="contain"
-          rounded="lg"
-          bgPos="center"
-          style={{ backgroundRepeat: "no-repeat" }}
-        >
-          <Div />
+    <SideDrawer
+      style={{ zIndex: 4 }}
+      isOpen={open}
+      onClose={handleClose}
+      w={{ xs: "100vw", md: "40rem" }}
+    >
+      <Row>
+        <Div w="100%">
+          <Button
+            h="2.5rem"
+            w="2.5rem"
+            bg="info700"
+            hoverBg="info600"
+            rounded="circle"
+            m={{ r: "1rem" }}
+            shadow="2"
+            hoverShadow="4"
+            onClick={handleClose}
+          >
+            <Icon name="Cross" size="20px" color="white" />
+          </Button>
         </Div>
-        <Div bg="white" shadow="4" rounded="xl" m={{ b: "1rem" }} p="1.5rem">
-          <Row>
-            <Col size="8">
-              <Text textSize="title" textWeight="500">
-                <span>
-                  <Icon name="Info" size="1rem" color="info700" />
-                </span>
-                {" " + job.title.split(" ").slice(0, 4).join(" ")}
-              </Text>
-              <Div
-                border={{ b: "1px solid" }}
-                borderColor="gray300"
-                p={{ b: "0.75rem" }}
-              >
-                <Text textSize="caption" textColor="light">
-                  <span>
-                    <Icon name="Location" size="1rem" color="warning700" />
-                  </span>{" "}
-                  {" " + job.location}
-                </Text>
-              </Div>
-              <Div
-                d="flex"
-                justify="space-between"
-                p={{ t: "1rem", b: "1.5rem" }}
-              >
-                <Div>
-                  <Text textSize="caption" textColor="dark">
-                    <span>
-                      <Icon name="Rename" size="1rem" color="danger700" />
-                    </span>{" "}
-                    {" " + job.company}
-                  </Text>
-                  <Text textSize="caption" textColor="light">
-                    <span>
-                      <Icon name="Timestamp" size="1rem" color="success700" />
-                    </span>
-                    {" " + makeDate(job.created_at)}
-                  </Text>
+      </Row>
+      <Row justify="center">
+        <Row w="100%">
+          <Col>
+            <Div
+              m={{ xs: "2rem", md: "2rem" }}
+              p={{ b: "1rem" }}
+              pos="relative"
+            >
+              {/* <Div d="flex" flexWrap="wrap">
+                {["info", "success", "danger", "gray", "warning", "brand"].map(
+                  (name) => (
+                    <Tag
+                      bg={`${name}100`}
+                      border="1px solid"
+                      borderColor={`${name}500`}
+                      textColor={`${name}800`}
+                      m={{ r: "0.5rem", b: "0.5rem" }}
+                    >
+                      CustomTag
+                    </Tag>
+                  )
+                )}
+              </Div> */}
+              <Div d="flex" justify="center">
+                <Div
+                  pos={{ xs: "absolute", lg: "absolute" }}
+                  top="-1.5rem"
+                  w={{ xs: "9rem", lg: "9rem" }}
+                  h={{ xs: "9rem", lg: "9rem" }}
+                  bg="white"
+                  shadow="5"
+                  rounded="xl"
+                  bgImg={job.company_logo}
+                  bgSize="contain"
+                  rounded="lg"
+                  bgPos="center"
+                  style={{ backgroundRepeat: "no-repeat" }}
+                >
+                  <Div />
                 </Div>
               </Div>
-              {/* <Button
+              <Div
+                bg="white"
+                shadow="4"
+                rounded="xl"
+                m={{ t: "5rem" }}
+                p="1rem"
+              >
+                <Row m={{ y: "3rem" }}>
+                  <Col size="12">
+                    <Div d="flex" justify="center" flexWrap="wrap">
+                      <Tag
+                        bg={`success700`}
+                        borderColor={`success500`}
+                        textColor={`White`}
+                        p={{ x: "0.75rem", y: "0.25rem" }}
+                        m={{ r: "0.5rem", b: "0.5rem" }}
+                        textSize="body"
+                      >
+                        <Icon
+                          name="Timestamp"
+                          size="1rem"
+                          color="white"
+                          m={{ r: "0.5rem" }}
+                        />{" "}
+                        <span>
+                          <b>{"  " + makeDate(job.created_at).toUpperCase()}</b>
+                        </span>
+                      </Tag>
+                      <Tag
+                        bg={`warning700`}
+                        borderColor={`warning500`}
+                        textColor={`White`}
+                        p={{ x: "0.75rem", y: "0.25rem" }}
+                        m={{ r: "0.5rem", b: "0.5rem" }}
+                        textSize="body"
+                      >
+                        <Icon
+                          name="Location"
+                          size="1rem"
+                          color="white"
+                          m={{ r: "0.5rem" }}
+                        />{" "}
+                        <span>
+                          <b>{"  " + job.location.toUpperCase()}</b>
+                        </span>
+                      </Tag>
+                      <Tag
+                        bg={`danger700`}
+                        borderColor={`danger500`}
+                        textColor={`White`}
+                        p={{ x: "0.75rem", y: "0.25rem" }}
+                        m={{ r: "0.5rem", b: "0.5rem" }}
+                        textSize="body"
+                      >
+                        <Icon
+                          name="Message"
+                          size="1rem"
+                          color="white"
+                          m={{ r: "0.5rem" }}
+                        />{" "}
+                        <span>
+                          <b>{"  " + job.source.toUpperCase()}</b>
+                        </span>
+                      </Tag>
+
+                      <Tag
+                        bg={`brand700`}
+                        borderColor={`brand500`}
+                        textColor={`White`}
+                        p={{ x: "0.75rem", y: "0.25rem" }}
+                        m={{ r: "0.5rem", b: "0.5rem" }}
+                        textSize="body"
+                      >
+                        <Icon
+                          name="Settings"
+                          size="1rem"
+                          color="white"
+                          m={{ r: "0.5rem" }}
+                        />{" "}
+                        <span>
+                          <b>{"  " + job.type.toUpperCase()}</b>
+                        </span>
+                      </Tag>
+                    </Div>
+                    <Text textSize="title" textWeight="500">
+                      <span>
+                        <Icon name="Info" size="1rem" color="info700" />
+                      </span>
+                      {" " + job.title + " at " + job.company}
+                    </Text>
+                    <Div
+                      border={{ b: "1px solid" }}
+                      borderColor="gray300"
+                      p={{ b: "0.75rem" }}
+                    ></Div>
+
+                      <Div>
+                        {/* <Text textSize="caption" textColor="dark">
+                          <span>
+                            <Icon name="Rename" size="1rem" color="danger700" />
+                          </span>{" "}
+                          {" " + job.company}
+                        </Text> */}
+                        <DialogContentText
+                          id="alert-dialog-slide-description"
+                          dangerouslySetInnerHTML={{ __html: job.description }}
+                        />
+                      </Div>
+               
+                      <Div
+                      border={{ b: "1px solid" }}
+                      borderColor="gray300"
+                      p={{ b: "0.75rem" }}
+                    ></Div>
+
+                      <Div d="flex" justify="space-evenly" flexWrap="wrap" m={{t:"2rem"}}>
+
+                      <a m="1rem" href={job.how_to_apply.replace(/(<([^>]+)>)/ig,"")} target="_blank">
+                        <Button
+                          prefix={
+                            <Icon
+                              name="Rename"
+                              size="16px"
+                              color="white"
+                              m={{ r: "0.5rem" }}
+                            />
+                          }
+                          bg="success700"
+                          hoverBg="success800"
+                          rounded="circle"
+                          p={{ r: "1.5rem", l: "1rem" }}
+                          shadow="3"
+                          hoverShadow="4"
+                        >
+                          How To Apply
+                        </Button>
+                      </a>
+                      <a m="1rem" href={job.company_url} target="_blank">
+                        <Button
+                          prefix={
+                            <Icon
+                              name="EyeSolid"
+                              size="16px"
+                              color="white"
+                              m={{ r: "0.5rem" }}
+                            />
+                          }
+                          bg="warning700"
+                          hoverBg="warning800"
+                          rounded="circle"
+                          p={{ r: "1.5rem", l: "1rem" }}
+                          shadow="3"
+                          hoverShadow="4"
+                        >
+                          Visit Company Profile
+                        </Button>
+                      </a>
+                    </Div>
+
+                    {/* <Button
             rounded="lg"
             bg="info700"
             hoverBg="info800"
@@ -156,45 +283,47 @@ export default function JobCard({ job,open, handleClose }){
           >
             View More 🚀
           </Button> */}
-            </Col>
-          </Row>
-        </Div>
-      </Div>
 
-      <div className="flex-align-mid">
-        {job.languages ? (
-          <div className="logo-container">
-            {job.languages.map((lang, i) => {
-              return (
-                <img
-                  key={`${job.title}:${lang}`}
-                  style={{ height: "40px" }}
-                  src={`assets/${logoMap[lang]}`}
-                />
-              );
-            })}
-          </div>
-        ) : (
-          <div className="logo-spacer" />
-        )}
-      </div>
-      <div></div>
-    </Col>
-          </Row>
-          </Row>
-   
-          {/* {job.title} at {job.company}
-          <img className={"logo"} src={job.company_logo}></img>
+
+                  
+                  </Col>
+                </Row>
+              </Div>
+            </Div>
+
+            <div className="flex-align-mid">
+              {job.languages ? (
+                <div className="logo-container">
+                  {job.languages.map((lang, i) => {
+                    return (
+                      <img
+                        key={`${job.title}:${lang}`}
+                        style={{ height: "40px" }}
+                        src={`assets/${logoMap[lang]}`}
+                      />
+                    );
+                  })}
+                </div>
+              ) : (
+                <div className="logo-spacer" />
+              )}
+            </div>
+            <div></div>
+          </Col>
+        </Row>
+      </Row>
+
+      {/* {job.title} at {job.company}
+          
         
 
 
-          Posted
-          {makeDate(job.created_at)}
+
             
         
       
           
-              {job.location}
+            
            
         
          
@@ -202,15 +331,8 @@ export default function JobCard({ job,open, handleClose }){
             
             label={`from ${job.source}`}
          
-          <DialogContentText
-            id="alert-dialog-slide-description"
-            dangerouslySetInnerHTML={{ __html: job.description }}
-          />
+
  */}
-
-
     </SideDrawer>
   );
-};
-
-
+}

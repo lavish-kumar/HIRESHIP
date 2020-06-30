@@ -1,0 +1,5 @@
+
+  img {
+    -webkit-transition:  height 4s; /* For Safari 3.1 to 6.0 */
+    transition: height 4s;
+  }

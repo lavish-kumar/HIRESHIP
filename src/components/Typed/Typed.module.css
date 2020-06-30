@@ -1,0 +1,40 @@
+/* Adding CSS manually is only necessary in JSFiddle,
+   where CSS can't be inserted into the <head> */
+   .typed-cursor{
+    opacity: 1;
+    animation: typedjsBlink 0.7s infinite;
+    -webkit-animation: typedjsBlink 0.7s infinite;
+    animation: typedjsBlink 0.7s infinite;
+  }
+  @keyframes typedjsBlink{
+    50% { opacity: 0.0; }
+  }
+  @-webkit-keyframes typedjsBlink{
+    0% { opacity: 1; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1; }
+  }
+  .typed-fade-out{
+    opacity: 0;
+    transition: opacity .25s;
+    -webkit-animation: 0;
+    animation: 0;
+  }
+
+  .pinktext{
+      font-size: 30px;
+      font-weight: 600;
+      color: #cc00ff79;
+      background-image: linear-gradient(-90deg, #45a0dd, #1652f5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  .whitetext{
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffffe0;
+    background-image: linear-gradient(-90deg, #fdfdfd, #f1e4ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

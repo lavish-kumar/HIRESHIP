@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Navbar.css"
 import Lottie from "../Lottie/Lottie"
-import animData from "../Lottie/data.json"
+import animData from "../Lottie/rocket.json"
 
 
 export default function NavBar() {

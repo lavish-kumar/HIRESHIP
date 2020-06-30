@@ -1,14 +1,14 @@
 import React from "react";
 
 import {
-  Button,
+  // Button,
   Div,
   Icon,
   Text,
-  Image,
-  ThemeProvider,
-  DefaultTheme,
-  StyleReset,
+  // Image,
+  // ThemeProvider,
+  // DefaultTheme,
+  // StyleReset,
   Row,
   Col,
 } from "atomize";
@@ -48,7 +48,7 @@ export default function Jobs({ job, onClick }) {
   return (
     <Col size={{ xs: 12, md: 12, lg: 6 }}>
       <Div
-        m={{ xs: "3rem", md: "5rem" }}
+        m={{ xs: "2rem", md: "5rem" }}
         p={{ b: "1rem" }}
         onClick={onClick}
         pos="relative"
@@ -64,7 +64,6 @@ export default function Jobs({ job, onClick }) {
           rounded="xl"
           bgImg={job.company_logo}
           bgSize="contain"
-          rounded="lg"
           bgPos="center"
           style={{ backgroundRepeat: "no-repeat" }}
         >

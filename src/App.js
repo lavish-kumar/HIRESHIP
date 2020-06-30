@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-import {BrowserRouter,Route,Redirect,Switch} from 'react-router-dom';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
 
 import MainNavigation from "../src/components/Navbar/Navbar";
 import Main from "./components/Home/Home";
 
-
+import withSplashScreen from "./components/HOC/withSplashScreen"
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
   );
 }
 
-export default App;
+export default withSplashScreen(App);
 
 
 

@@ -1,31 +1,31 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import Dialog from "@material-ui/core/Dialog";
+// import DialogTitle from "@material-ui/core/DialogTitle";
+// import Dialog from "@material-ui/core/Dialog";
 //import Button from "@material-ui/core/Button";
 import JobCard from "./JobDescription";
 import MobileStepper from "@material-ui/core/MobileStepper";
-import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import Paper from "@material-ui/core/Paper";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-import TagSearch from "./TagSearch";
+// import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
+// import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
+// import Paper from "@material-ui/core/Paper";
+// import Radio from "@material-ui/core/Radio";
+// import RadioGroup from "@material-ui/core/RadioGroup";
+// import FormControlLabel from "@material-ui/core/FormControlLabel";
+// import FormControl from "@material-ui/core/FormControl";
+// import FormLabel from "@material-ui/core/FormLabel";
+// import TagSearch from "./TagSearch";
 
 import {
   Button,
-  Div,
+  // Div,
   Icon,
-  Text,
-  Image,
-  ThemeProvider,
-  DefaultTheme,
-  StyleReset,
+  // Text,
+  // Image,
+  // ThemeProvider,
+  // DefaultTheme,
+  // StyleReset,
   Row,
-  Col
+  // Col
 } from "atomize";
 
 
@@ -49,10 +49,10 @@ export default function Jobs({ jobs }) {
   };
 
   // location
-  const [location, setLocation] = React.useState("all");
-  function handleLocationChange(event) {
-    setLocation(event.target.value);
-  }
+  // const [location, setLocation] = React.useState("all");
+  // function handleLocationChange(event) {
+  //   setLocation(event.target.value);
+  // }
 
   //pagination
   const maxSteps = Math.ceil(jobs.length / 25);
@@ -147,6 +147,7 @@ export default function Jobs({ jobs }) {
         </Typography>
       </div>
       <MobileStepper
+        
         className="stepper"
         steps={maxSteps}
         position="static"
@@ -169,7 +170,7 @@ export default function Jobs({ jobs }) {
     }
     shadow="3"
     hoverShadow="4"
-    m={{ r: "1rem" }}
+   
             onClick={handleNext}
             disabled={activeStep === maxSteps - 1}
           >
@@ -191,7 +192,7 @@ export default function Jobs({ jobs }) {
           }
           shadow="3"
           hoverShadow="4"
-          m={{ r: "1rem" }}
+          
           
           
          onClick={handleBack} disabled={activeStep === 0}>
