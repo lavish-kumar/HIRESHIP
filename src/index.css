@@ -31,3 +31,5 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+*{transition: background 1s cubic-bezier(0.25, 0.1, 0.25, 1);;}
