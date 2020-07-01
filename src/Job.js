@@ -59,13 +59,13 @@ export default function Jobs({ job, onClick }) {
           right={{ xs: "-1.5rem", lg: "-1.5rem" }}
           w={{ xs: "5rem", lg: "9rem" }}
           h={{ xs: "5rem", lg: "9rem" }}
-          bg="white"
           shadow="5"
           rounded="xl"
           bgImg={job.company_logo}
           bgSize="contain"
           bgPos="center"
-          style={{ backgroundRepeat: "no-repeat" }}
+          
+          style={{ backgroundRepeat: "no-repeat",backgroundColor:"white" }}
         >
           <Div />
         </Div>
@@ -133,6 +133,7 @@ export default function Jobs({ job, onClick }) {
                   key={`${job.title}:${lang}`}
                   style={{ height: "40px" }}
                   src={`assets/${logoMap[lang]}`}
+                  alt="Company Logo"
                 />
               );
             })}

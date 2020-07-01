@@ -66,7 +66,7 @@ export default function Jobs({ jobs }) {
   };
 
 
-  console.log("Job object", jobs.length, jobs[0]);
+  // console.log("Job object", jobs.length, jobs[0]);
   return (
     <div className="jobs">
       <JobCard open={open} job={selectedJob} handleClose={handleClose} />
@@ -126,7 +126,7 @@ export default function Jobs({ jobs }) {
           key={i}
           job={job}
           onClick={() => {
-            console.log("Clicked!");
+            // console.log("Clicked!");
             handleClickOpen();
             selectJob(job);
           }}

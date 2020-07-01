@@ -2,7 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { ThemeProvider,StyleReset } from 'atomize';
+import { 
+  // ThemeProvider,
+  // StyleReset,
+  Div
+ } from 'atomize';
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -16,25 +20,25 @@ const debug =
 // 1. Create a client engine instance
 const engine = new Styletron();
 
-const theme = {
-  colors: {
+// const theme = {
+//   colors: {
 
-  },
-  fontFamily: {
-      primary: "Menlo, Monaco, Consolas, Courier New",
-    }
+//   },
+//   fontFamily: {
+//       primary: "Menlo, Monaco, Consolas, Courier New",
+//     }
   
   
-};
+// };
 
 ReactDOM.render(
   <React.StrictMode>
     <StyletronProvider value={engine} debug={debug} debugAfterHydration>
 
-       <ThemeProvider theme={theme}>
-      <StyleReset />
+       {/* <ThemeProvider theme={theme}>
+      <StyleReset /> */}
       <App />
-    </ThemeProvider>
+    {/* </ThemeProvider> */}
     
   </StyletronProvider>
   </React.StrictMode>,

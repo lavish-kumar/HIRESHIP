@@ -47,7 +47,7 @@ export default function SiteLoader() {
           m={{ t: "1rem" }}
           textAlign="center"
         >
-          in Indian Timezone. 🎉
+          in Indian Timezone <span role="img" aria-label="celebrate">🎉</span>
         </Text>
           </Col>
           </Row>

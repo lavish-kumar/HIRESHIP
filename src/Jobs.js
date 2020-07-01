@@ -17,9 +17,9 @@ import MobileStepper from "@material-ui/core/MobileStepper";
 
 import {
   Button,
-  // Div,
+  Div,
   Icon,
-  // Text,
+  Text,
   // Image,
   // ThemeProvider,
   // DefaultTheme,
@@ -68,9 +68,9 @@ export default function Jobs({ jobs }) {
   };
 
 
-  console.log("Job object", jobs.length, jobs[0]);
+  // console.log("Job object", jobs.length, jobs[0]);
   return (
-    <div className="jobs">
+    <Div className="jobs">
       <JobCard open={open} job={selectedJob} handleClose={handleClose} />
 {/*      
       <Typography style={{ marginTop: "5px", color: "white" }} variant="h6">
@@ -128,7 +128,7 @@ export default function Jobs({ jobs }) {
           key={i}
           job={job}
           onClick={() => {
-            console.log("Clicked!");
+            // console.log("Clicked!");
             handleClickOpen();
             selectJob(job);
           }}
@@ -141,13 +141,14 @@ export default function Jobs({ jobs }) {
         </Row>
 
 
-      <div>
-        <Typography style={{ color: "white" }}>
+      <Div>
+        <Text textAlign="center">
           Page {activeStep + 1} of {maxSteps}
-        </Typography>
-      </div>
+          </Text>
+      </Div>
+      <Div>
       <MobileStepper
-        
+        style={{backgroundColor:"transparent"}}
         className="stepper"
         steps={maxSteps}
         position="static"
@@ -201,6 +202,7 @@ export default function Jobs({ jobs }) {
           </Button>
         }
       />
-    </div>
+      </Div>
+    </Div>
   );
 }

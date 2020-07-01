@@ -1,6 +1,6 @@
 import React from "react";
 
-import Slide from "@material-ui/core/Slide";
+// import Slide from "@material-ui/core/Slide";
 // import Chip from "@material-ui/core/Chip";
 // import Avatar from "@material-ui/core/Avatar";
 import { DialogContentText } from "@material-ui/core";
@@ -11,11 +11,11 @@ import { DialogContentText } from "@material-ui/core";
 
 import { Div, Button, SideDrawer, Icon, Text, Row, Col, Tag } from "atomize";
 
-import Job from "./Job";
+// import Job from "./Job";
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
+// const Transition = React.forwardRef(function Transition(props, ref) {
+//   return <Slide direction="up" ref={ref} {...props} />;
+// });
 
 const ONE_DAY_MS = 24 * 3600 * 1000;
 const logoMap = {
@@ -103,14 +103,12 @@ export default function JobCard({ job, open, handleClose }) {
                   top="-1.5rem"
                   w={{ xs: "9rem", lg: "9rem" }}
                   h={{ xs: "9rem", lg: "9rem" }}
-                  bg="white"
                   shadow="5"
                   rounded="xl"
                   bgImg={job.company_logo}
                   bgSize="contain"
-                  rounded="lg"
                   bgPos="center"
-                  style={{ backgroundRepeat: "no-repeat" }}
+                  style={{ backgroundRepeat: "no-repeat",backgroundColor:"white" }}
                 >
                   <Div />
                 </Div>
@@ -128,7 +126,7 @@ export default function JobCard({ job, open, handleClose }) {
                       <Tag
                         bg={`success700`}
                         borderColor={`success500`}
-                        textColor={`White`}
+                        textColor="white"
                         p={{ x: "0.75rem", y: "0.25rem" }}
                         m={{ r: "0.5rem", b: "0.5rem" }}
                         textSize="body"
@@ -146,7 +144,7 @@ export default function JobCard({ job, open, handleClose }) {
                       <Tag
                         bg={`warning700`}
                         borderColor={`warning500`}
-                        textColor={`White`}
+                        textColor="white"
                         p={{ x: "0.75rem", y: "0.25rem" }}
                         m={{ r: "0.5rem", b: "0.5rem" }}
                         textSize="body"
@@ -164,7 +162,7 @@ export default function JobCard({ job, open, handleClose }) {
                       <Tag
                         bg={`danger700`}
                         borderColor={`danger500`}
-                        textColor={`White`}
+                        textColor="white"
                         p={{ x: "0.75rem", y: "0.25rem" }}
                         m={{ r: "0.5rem", b: "0.5rem" }}
                         textSize="body"
@@ -183,7 +181,7 @@ export default function JobCard({ job, open, handleClose }) {
                       <Tag
                         bg={`brand700`}
                         borderColor={`brand500`}
-                        textColor={`White`}
+                        textColor="white"
                         p={{ x: "0.75rem", y: "0.25rem" }}
                         m={{ r: "0.5rem", b: "0.5rem" }}
                         textSize="body"
@@ -218,7 +216,7 @@ export default function JobCard({ job, open, handleClose }) {
                           </span>{" "}
                           {" " + job.company}
                         </Text> */}
-                        <DialogContentText
+                        <Div
                           id="alert-dialog-slide-description"
                           dangerouslySetInnerHTML={{ __html: job.description }}
                         />
@@ -232,7 +230,9 @@ export default function JobCard({ job, open, handleClose }) {
 
                       <Div d="flex" justify="space-evenly" flexWrap="wrap" m={{t:"2rem"}}>
 
-                      <a m="1rem" href={job.how_to_apply.replace(/(<([^>]+)>)/ig,"")} target="_blank">
+                      <a m="1rem" 
+                      rel="noopener noreferrer"
+                      href={(job.how_to_apply.match(/"(.*?)"/g))?(job.how_to_apply.match(/"(.*?)"/g))[0].replace(/"/g,'') :"#"} target="_blank">
                         <Button
                           prefix={
                             <Icon
@@ -252,7 +252,7 @@ export default function JobCard({ job, open, handleClose }) {
                           How To Apply
                         </Button>
                       </a>
-                      <a m="1rem" href={job.company_url} target="_blank">
+                      <a rel="noopener noreferrer" m="1rem" href={job.company_url} target="_blank">
                         <Button
                           prefix={
                             <Icon
@@ -300,6 +300,7 @@ export default function JobCard({ job, open, handleClose }) {
                         key={`${job.title}:${lang}`}
                         style={{ height: "40px" }}
                         src={`assets/${logoMap[lang]}`}
+                        alt="Company Logo"
                       />
                     );
                   })}
